@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teams | EriStars Sports Club</title>
+  <meta name="description" content="Explore EriStars Sports Club youth soccer teams, team pages, schedules and results.">
+  <meta name="theme-color" content="#0b0d0f">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="EriStars Sports Club">
+  <meta property="og:title" content="Teams | EriStars Sports Club">
+  <meta property="og:description" content="Explore EriStars Sports Club youth soccer teams, team pages, schedules and results.">
+  <meta property="og:image" content="assets/images/team-hero-1200.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="assets/images/favicon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script defer src="assets/data/site.js"></script>
+  <script defer src="assets/data/images.js"></script>
+  <script defer src="assets/data/programs.js"></script>
+  <script defer src="assets/data/teams.js"></script>
+  <script defer src="assets/data/content.js"></script>
+  <script defer src="assets/js/main.js"></script>
+</head>
+<body data-page="teams">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <div class="header-slot" data-site-header></div>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-media"><img src="assets/images/team-hero-1280.webp" srcset="assets/images/team-hero-768.webp 768w, assets/images/team-hero-1280.webp 1280w, assets/images/team-hero-2048.webp 2048w" sizes="100vw" width="2048" height="753" fetchpriority="high" decoding="async" alt=""></div>
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><ol><li><a href="index.html">Home</a></li><li aria-current="page">Teams</li></ol></nav>
+        <span class="eyebrow">Teams</span>
+        <h1>Our teams</h1>
+        <p class="lead">EriStars teams are organized by birth year, giving players the chance to grow together season after season.</p>
+      </div>
+    </section>
+    <section class="section" id="current" aria-labelledby="current-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Current season</span>
+          <h2 id="current-title">Teams overview</h2>
+        </div>
+        <div data-render="teams-current"></div>
+      </div>
+    </section>
+
+    <section class="section section--paper" id="highlights" aria-labelledby="highlights-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Club highlights</span>
+          <h2 id="highlights-title">Proud moments</h2>
+        </div>
+        <div data-render="teams-past"></div>
+      </div>
+    </section>
+
+    <section class="section" id="schedules" aria-labelledby="schedules-title">
+      <div class="container split">
+        <div class="stack-lg">
+          <span class="eyebrow">Schedules &amp; results</span>
+          <h2 id="schedules-title">Game days &amp; results</h2>
+          <p class="lead">Training times, match schedules and results are shared directly with registered families. Public schedules will appear on each team’s page once they are published.</p>
+        </div>
+        <div class="panel">
+          <h3 class="h4">Looking for your team’s schedule?</h3>
+          <p class="text-muted">Contact your team’s coach or reach out to the club and we’ll point you in the right direction.</p>
+          <div class="btn-row"><a class="btn btn--sm" href="contact.html">Contact the club</a><a class="btn btn--outline btn--sm" href="locations.html">Field locations</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-site-footer></div>
+  <noscript><p class="container no-js-note">Some sections of this site need JavaScript. Pages: <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="programs.html">Programs</a> · <a href="teams.html">Teams</a> · <a href="register.html">Register</a> · <a href="contact.html">Contact</a></p></noscript>
+</body>
+</html>

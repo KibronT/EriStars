@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Uncomment once the site is live and sitemap.xml has your real domain:
+# Sitemap: https://YOUR-DOMAIN/sitemap.xml
