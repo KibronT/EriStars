@@ -1,7 +1,7 @@
 /* ==========================================================================
    TEAMS
    One entry per team. Every team gets its own page automatically at
-   team.html?team=<id> — no extra HTML needed.
+   team.html?team=<id>, with no extra HTML needed.
 
    status: "current" (shown under Current Season) or "past" (Club Highlights)
 
@@ -19,7 +19,7 @@
      image: null,                    // key from images.js, or null
      description: "Short team overview.",
      coaches: [{ name: "Coach Name", role: "Head Coach" }],
-     roster: [],                     // e.g. [{ name: "First L.", number: 7 }] — approval required
+     roster: [],                     // e.g. [{ name: "First L.", number: 7 }] (approval required)
      schedule: [{ date: "2026-09-06", time: "10:00 AM", opponent: "Opponent", location: "Field name", type: "Match" }],
      results: [{ date: "2026-09-06", opponent: "Opponent", score: "2–1", outcome: "W" }],
      honours: [],
@@ -38,7 +38,7 @@ ERISTARS.teams = [
     competition: null,
     image: "teamB2013",
     description:
-      "The Boys 2013 group closed the Fall 2022 season as SAC champions — a proud moment for the players, coaches and families who supported them.",
+      "The Boys 2013 group closed the Fall 2022 season as SAC champions, a proud moment for the players, coaches and families who supported them.",
     coaches: [],
     roster: [],
     schedule: [],

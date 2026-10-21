@@ -6,12 +6,12 @@
 
 :root {
   /* ---- Brand (from the logo) ---- */
-  --brand-green: #12ad2b;        /* "Stars" wordmark green — accents on dark backgrounds */
+  --brand-green: #12ad2b;        /* "Stars" wordmark green: accents on dark backgrounds */
   --brand-green-700: #0b7a1f;    /* AA-contrast green for buttons & text on light backgrounds */
   --brand-green-800: #086418;    /* hover / pressed */
-  --brand-red: #eb0438;          /* "Eri" wordmark red — used sparingly */
+  --brand-red: #eb0438;          /* "Eri" wordmark red: used sparingly */
   --brand-red-700: #c4022e;
-  --brand-blue: #4189dd;         /* ball / flag blue — identity stripe only */
+  --brand-blue: #4189dd;         /* ball / flag blue: identity stripe only */
 
   /* ---- Neutrals ---- */
   --ink-950: #0b0d0f;            /* deepest background */

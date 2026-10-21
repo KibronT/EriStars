@@ -1,5 +1,5 @@
 /* ==========================================================================
-   EriStars Sports Club — main stylesheet
+   EriStars Sports Club: main stylesheet
    Order: base → layout → typography → buttons → header → heroes → sections
           → components → footer → utilities
    All colors / sizes come from tokens.css.
@@ -93,7 +93,7 @@ h4, .h4 { font-family: var(--font-body); font-size: var(--fs-h4); font-weight: 7
 .eyebrow::before { content: ""; width: 28px; height: 3px; background: var(--brand-red); flex: none; }
 .section--dark .eyebrow, .on-dark .eyebrow { color: var(--brand-green); }
 
-/* Tri-color identity stripe — echoes the ball/flag in the logo */
+/* Tri-color identity stripe: echoes the ball/flag in the logo */
 .stripe { display: flex; height: 4px; width: 72px; }
 .stripe::before, .stripe::after, .stripe span { content: ""; flex: 1; }
 .stripe::before { background: var(--brand-green); }

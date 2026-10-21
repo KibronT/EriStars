@@ -1,5 +1,5 @@
 /* ==========================================================================
-   EriStars Sports Club — site script
+   EriStars Sports Club: site script
    - Renders the shared header, mobile drawer and footer on every page
    - Renders structured content (assets/data/*.js) into [data-render] slots
    - Navigation, dropdowns, lightbox and contact-form behaviour
@@ -132,7 +132,7 @@
     slot.outerHTML =
       '<header class="site-header" id="site-header">' +
         '<div class="container header-inner">' +
-          '<a class="brand" href="index.html" aria-label="EriStars Sports Club — home">' +
+          '<a class="brand" href="index.html" aria-label="EriStars Sports Club home">' +
             '<img src="assets/images/logo-light.png" alt="EriStars Sports Club" width="480" height="225">' +
           "</a>" +
           '<nav class="primary-nav" aria-label="Main"><ul class="nav-list">' + desktop + "</ul></nav>" +
@@ -163,7 +163,7 @@
     if (SITE.email) contact.push('<a href="mailto:' + esc(SITE.email) + '">' + esc(SITE.email) + "</a>");
     if (SITE.phone) contact.push('<a href="tel:' + esc(SITE.phone.replace(/[^\d+]/g, "")) + '">' + esc(SITE.phone) + "</a>");
     contact.push("<span>Based in " + esc(SITE.baseCity) + "</span>");
-    contact.push("<span>Serving the DMV — D.C., Maryland &amp; Virginia</span>");
+    contact.push("<span>Serving the DMV: D.C., Maryland &amp; Virginia</span>");
     contact.push('<a href="contact.html">Send us a message</a>');
 
     slot.outerHTML =
@@ -402,7 +402,7 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /* Renderers — any element with data-render="name" is filled here      */
+  /* Renderers: any element with data-render="name" is filled here      */
   /* ------------------------------------------------------------------ */
   var R = {};
 
@@ -461,7 +461,7 @@
     }
     document.title = t.name + " | Teams | EriStars Sports Club";
     var meta = $('meta[name="description"]');
-    if (meta) meta.setAttribute("content", t.name + " — " + (t.description || "EriStars Sports Club team page."));
+    if (meta) meta.setAttribute("content", t.name + ": " + (t.description || "EriStars Sports Club team page."));
     $("[data-team-name]").textContent = t.name;
     $("[data-team-crumb]").textContent = t.name;
     var badges = '<span class="badge">' + esc(t.ageGroup) + "</span>" +
@@ -627,7 +627,7 @@
     };
   }
   R["leadership"] = peopleRenderer("leadership", "Leadership profiles coming soon", "EriStars is led by a volunteer board of parents and community members. Board member profiles will be published here once approved.");
-  R["coaches"] = peopleRenderer("coaches", "Coaching staff profiles coming soon", "Coach profiles — with official titles and approved biographies — will be added for the current season.");
+  R["coaches"] = peopleRenderer("coaches", "Coaching staff profiles coming soon", "Coach profiles, with official titles and approved biographies, will be added for the current season.");
 
   R["registration"] = function (el) {
     var list = D.registration || [];
@@ -771,7 +771,7 @@
         // Not connected to a delivery service yet: say so honestly and offer working alternatives.
         var alt = [];
         if (SITE.email) {
-          alt.push('<a href="mailto:' + esc(SITE.email) + "?subject=" + encodeURIComponent(data.subject + " — " + data.name) + "&body=" + encodeURIComponent(data.message + "\n\n" + data.name + "\n" + data.email) + '">open it in your email app</a>');
+          alt.push('<a href="mailto:' + esc(SITE.email) + "?subject=" + encodeURIComponent(data.subject + ": " + data.name) + "&body=" + encodeURIComponent(data.message + "\n\n" + data.name + "\n" + data.email) + '">open it in your email app</a>');
         }
         if (SITE.social && SITE.social.facebook) alt.push('<a href="' + esc(SITE.social.facebook) + '" target="_blank" rel="noopener">message us on Facebook</a>');
         show("info", "<strong>Your message has not been sent.</strong> Online messaging is still being set up." +
@@ -790,7 +790,7 @@
         if (!res.ok) throw new Error("HTTP " + res.status);
         form.reset();
         fields.forEach(function (f) { f.removeAttribute("aria-invalid"); });
-        show("success", "<strong>Thank you — your message was sent.</strong> A club representative will reply to " + esc(data.email) + ".");
+        show("success", "<strong>Thank you! Your message was sent.</strong> A club representative will reply to " + esc(data.email) + ".");
       }).catch(function () {
         show("error", "<strong>Sorry, your message could not be sent.</strong> Please check your connection and try again" +
           (SITE.social && SITE.social.facebook ? ', or <a href="' + esc(SITE.social.facebook) + '" target="_blank" rel="noopener">message us on Facebook</a>' : "") + ".");

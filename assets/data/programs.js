@@ -37,7 +37,7 @@ ERISTARS.programs = [
     name: "Player Development",
     summary: "Structured training and match play that help players grow technically, tactically and as teammates.",
     overview:
-      "For players ready to take the next step, EriStars teams train and compete together in organized league play. The focus is long-term development — technique, decision-making and match performance — guided by the club’s commitment to sportsmanship over winning at all costs.",
+      "For players ready to take the next step, EriStars teams train and compete together in organized league play. The focus is long-term development (technique, decision-making and match performance), guided by the club’s commitment to sportsmanship over winning at all costs.",
     image: "teamHero",
     imagePosition: "88% 50%",
     link: "programs.html#player-development",
@@ -67,7 +67,7 @@ ERISTARS.programs = [
   {
     id: "community",
     name: "Community & Service",
-    summary: "Volunteer opportunities — including Student Service Learning (SSL) hours — and events that bring families together.",
+    summary: "Volunteer opportunities, including Student Service Learning (SSL) hours, and events that bring families together.",
     overview:
       "The club encourages volunteering and community involvement. High school players can take part in Student Service Learning (SSL) opportunities, subject to their school system’s requirements.",
     image: null,

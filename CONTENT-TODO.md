@@ -10,11 +10,11 @@ What the site currently publishes, where each fact came from, and what the club 
 | Legal name: Eritrean-American Youth Sports Association of Maryland, Inc. | Project brief; GuideStar |
 | EIN 81-0712069 | Club's existing TeamSnap site; GuideStar |
 | Based in Laurel, MD; serves the DC metro / DMV | GuideStar profile |
-| Independent, non-political, non-religious | Project brief |
+| Independent community organization ("non-political, non-religious" wording removed from the site, Oct 2026) | Project brief |
 | Year-round soccer; values teamwork and sportsmanship over winning; promotes academics and volunteering | Existing site's mission text |
 | SSL opportunity, Path to College, scholarships & internships | Existing site's program sections |
 | Facebook, X (Twitter) and YouTube links | Existing site |
-| "Boys 2013 — Fall 2022 SAC Champions" | Caption printed on the club's own team photo |
+| "Boys 2013: Fall 2022 SAC Champions" | Caption printed on the club's own team photo |
 | "Success Through Sportsmanship" | Club logo |
 
 ## ⚠️ Please confirm
@@ -25,7 +25,7 @@ What the site currently publishes, where each fact came from, and what the club 
 - [ ] **Nonprofit status wording**: the site says "nonprofit organization." Confirm whether to say "501(c)(3)."
 - [ ] **Program details**: ages, levels, schedules, locations and fees are blank (shown as "Contact us for current details").
 - [ ] **"Player Development" program**: confirm it reflects how teams currently compete (organized league play).
-- [ ] **Volunteer screening line** on Get Involved ("may need to complete screening") — confirm or remove.
+- [ ] **Volunteer screening line** on Get Involved ("may need to complete screening"): confirm or remove.
 
 ## 📝 Content to supply
 

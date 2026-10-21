@@ -22,8 +22,8 @@ ERISTARS.site = {
   baseCity: "Laurel, Maryland",
 
   /* ---- Contact (verify before filling in) ---- */
-  email: "",            // e.g. "info@eristars.org"  — TODO: confirm official address
-  phone: "",            // e.g. "(301) 555-0100"     — TODO: confirm, or leave blank
+  email: "",            // e.g. "info@eristars.org"  TODO: confirm official address
+  phone: "",            // e.g. "(301) 555-0100"     TODO: confirm, or leave blank
   mailingAddress: "",   // Optional public mailing address
 
   /* ---- Social (taken from the club's existing website) ---- */

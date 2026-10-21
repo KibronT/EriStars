@@ -1,4 +1,4 @@
-# EriStars Sports Club — Website
+# EriStars Sports Club Website
 
 The official website for EriStars Sports Club, a community youth soccer organization serving the DMV since 2011.
 

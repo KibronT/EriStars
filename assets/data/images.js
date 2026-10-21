@@ -9,7 +9,7 @@
 window.ERISTARS = window.ERISTARS || {};
 
 ERISTARS.images = {
-  /* Boys 2013 team, Fall 2022 — cropped to remove the printed caption. */
+  /* Boys 2013 team, Fall 2022, cropped to remove the printed caption. */
   teamHero: {
     src: "assets/images/team-hero-1280.webp",
     srcset: "assets/images/team-hero-768.webp 768w, assets/images/team-hero-1280.webp 1280w, assets/images/team-hero-2048.webp 2048w",
@@ -24,7 +24,7 @@ ERISTARS.images = {
     full: "assets/images/team-b2013-1600.webp",
     width: 1600, height: 879,
     alt: "The EriStars Boys 2013 team and coaches celebrating with medals in front of a goal under the caption “B2013 – Fall 2022 SAC Champions.”",
-    caption: "Boys 2013 — Fall 2022 SAC Champions"
+    caption: "Boys 2013: Fall 2022 SAC Champions"
   },
 
   graduates: {
