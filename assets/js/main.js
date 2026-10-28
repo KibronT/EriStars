@@ -191,7 +191,10 @@
           '<div class="footer-col"><h2>Contact</h2><address>' + contact.join("") + "</address></div>" +
         "</div>" +
         '<div class="container footer-bottom">' +
-          "<span>© " + year + " " + esc(SITE.name) + ". Operated by " + esc(SITE.legalName) + "</span>" +
+          '<div class="footer-legal">' +
+            "<span>© " + year + " " + esc(SITE.name) + ". Operated by " + esc(SITE.legalName) + "</span>" +
+            '<span class="footer-credit">Developed by <a href="https://www.lomisolutions.com/" target="_blank" rel="noopener">LomiSolutions<span class="visually-hidden"> (opens in a new tab)</span></a></span>' +
+          "</div>" +
           '<span>“' + esc(SITE.motto) + "”</span>" +
         "</div>" +
       "</footer>";
@@ -721,6 +724,64 @@
   }
 
   /* ------------------------------------------------------------------ */
+  /* LomiSpeak promo: floating card, bottom-right                        */
+  /* Appears after scrolling past the first screen, hides over the       */
+  /* footer, and stays closed for the session once dismissed.            */
+  /* ------------------------------------------------------------------ */
+  var PROMO_KEY = "eristars-promo-dismissed";
+
+  function initPromo() {
+    var dismissed = false;
+    try { dismissed = sessionStorage.getItem(PROMO_KEY) === "1"; } catch (e) {}
+    if (dismissed) return;
+
+    var apple = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.15 6.9c-.95 0-2.42-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.2 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.68-1.48 3.68-2.95 1.15-1.69 1.63-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.03-3.04 2.48-4.49 2.6-4.56-1.43-2.09-3.63-2.32-4.4-2.38-2-.15-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.67.8-3.54 1.82-.78.9-1.45 2.34-1.27 3.71 1.34.1 2.71-.69 3.56-1.7"/></svg>';
+    var play = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m22.02 13.3-3.92 2.22-3.52-3.5 3.55-3.52 3.89 2.2a1.49 1.49 0 0 1 0 2.6zM1.34.92a1.49 1.49 0 0 0-.11.57v21.02c0 .22.04.42.12.6l11.15-11.09L1.34.92zm12.2 10.07 3.26-3.24L3.45.2a1.47 1.47 0 0 0-.95-.18l11.04 10.97zm0 2.07-11 10.93c.3.04.61-.02.9-.18l13.33-7.54-3.23-3.21z"/></svg>';
+    var mac = '<svg viewBox="0 0 24 24" ' + P + ' aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M1 20h22"/></svg>';
+    var links = [
+      ["https://apps.apple.com/app/apple-store/id6768473172?pt=128865327&ct=EriStars&mt=8", apple, "Download on the", "App Store"],
+      ["https://play.google.com/store/apps/details?id=com.tigrinya.app&referrer=utm_source%3Deristars%26utm_medium%3Dweb%26utm_campaign%3DEriStars", play, "Get it on", "Google Play"],
+      ["https://lomispeak.com/desktop?utm_source=eristars&utm_medium=web&utm_campaign=EriStars", mac, "Download for", "Mac"]
+    ];
+
+    var promo = document.createElement("aside");
+    promo.className = "promo";
+    promo.setAttribute("aria-label", "LomiSpeak app");
+    promo.innerHTML =
+      '<button class="promo-close" type="button" aria-label="Close LomiSpeak banner">' + ICON.close + "</button>" +
+      '<div class="promo-head">' +
+        '<img src="assets/images/lomispeaklogo.webp" alt="" width="64" height="64">' +
+        '<p><strong>LomiSpeak</strong>Use your voice to type Tigrinya</p>' +
+      "</div>" +
+      '<ul class="promo-badges" role="list">' + links.map(function (l) {
+        return '<li><a href="' + esc(l[0]) + '" target="_blank" rel="noopener">' + l[1] +
+          "<span><small>" + l[2] + "</small>" + l[3] + '<span class="visually-hidden"> (opens in a new tab)</span></span></a></li>';
+      }).join("") + "</ul>";
+    document.body.appendChild(promo);
+
+    var footer = $(".site-footer");
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var past = window.scrollY > Math.min(window.innerHeight * 0.75, 640);
+      var atFooter = footer && footer.getBoundingClientRect().top < window.innerHeight - 40;
+      promo.classList.toggle("is-visible", past && !atFooter);
+    }
+    function onScroll() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    update();
+
+    $(".promo-close", promo).addEventListener("click", function () {
+      try { sessionStorage.setItem(PROMO_KEY, "1"); } catch (e) {}
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      promo.classList.remove("is-visible");
+      setTimeout(function () { promo.remove(); }, 400);
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
   /* Contact form                                                        */
   /* ------------------------------------------------------------------ */
   function initContactForm() {
@@ -812,6 +873,7 @@
   renderAll(document);
   initLightbox();
   initContactForm();
+  initPromo();
 
   // Re-apply hash scrolling after content renders (for links like teams.html#schedules)
   if (window.location.hash) {

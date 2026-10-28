@@ -635,6 +635,48 @@ body.drawer-open { overflow: hidden; }
 .footer-col address { font-style: normal; display: grid; gap: .55rem; color: var(--gray-400); }
 .footer-bottom { border-top: 1px solid var(--border-dark); padding-block: 1.5rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; font-size: var(--fs-sm); color: var(--gray-400); }
 .footer-bottom a { color: var(--gray-300); }
+.footer-legal { display: grid; gap: .3rem; }
+.footer-credit { font-size: var(--fs-xs); letter-spacing: .02em; }
+.footer-credit a { text-decoration: none; }
+.footer-credit a:hover { color: var(--white); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- LomiSpeak promo (floating, bottom-right) ---------- */
+.promo {
+  position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 90;
+  width: 348px; padding: 1rem; display: grid; gap: .8rem;
+  background: var(--white); color: var(--ink-900);
+  border-radius: var(--radius-lg); box-shadow: 0 14px 40px -10px rgba(11,13,15,.35), 0 2px 8px rgba(11,13,15,.08);
+  opacity: 0; visibility: hidden; transform: translateY(16px);
+  transition: opacity 320ms var(--ease), transform 320ms var(--ease), visibility 320ms;
+}
+.promo.is-visible { opacity: 1; visibility: visible; transform: none; }
+.promo-close {
+  position: absolute; top: .4rem; right: .4rem; width: 32px; height: 32px;
+  display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%;
+  background: none; color: var(--gray-500); cursor: pointer;
+}
+.promo-close:hover { background: var(--gray-100); color: var(--ink-900); }
+.promo-close svg { width: 16px; height: 16px; }
+.promo-head { display: flex; align-items: center; gap: .75rem; padding-right: 1.75rem; }
+.promo-head img { width: 44px; height: 44px; border-radius: 10px; flex: none; }
+.promo-head p { font-size: .92rem; font-weight: 600; line-height: 1.3; }
+.promo-head strong { display: block; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--brand-green-700); }
+.promo-badges { display: flex; gap: .35rem; list-style: none; margin: 0; padding: 0; }
+.promo-badges li { flex: 1 1 auto; }
+.promo-badges a {
+  display: flex; align-items: center; justify-content: center; gap: .35rem; height: 40px; padding: 0 .5rem;
+  background: var(--ink-950); color: var(--white); border-radius: 7px; text-decoration: none;
+  font-size: .74rem; font-weight: 600; line-height: 1.05; white-space: nowrap;
+  transition: background var(--dur) var(--ease);
+}
+.promo-badges a:hover { background: var(--ink-700); }
+.promo-badges svg { width: 16px; height: 16px; flex: none; }
+.promo-badges small { display: block; font-size: .55rem; font-weight: 500; opacity: .8; }
+@media (max-width: 559px) {
+  .promo { left: .75rem; right: .75rem; bottom: .75rem; width: auto; padding: .8rem; gap: .65rem; }
+  .promo-head img { width: 38px; height: 38px; }
+}
+@media print { .promo { display: none !important; } }
 
 /* ---------- Utilities ---------- */
 .mt-0 { margin-top: 0 !important; }
